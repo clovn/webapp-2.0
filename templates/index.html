@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Форма ремонта автомобиля</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Заявка на ремонт машины</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../static/styles.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Форма ремонта автомобиля</h1>
-    <form action="{{ url_for('submit_form') }}" method="post">
-        <label for="num">Номер машины:</label>
-        <input type="text" id="num" name="num"><br><br>
+<div class="container">
+    <h1>Заявка на ремонт машины</h1>
+    <form>
+        <label for="car-number">Номер машины:</label>
+        <input id="car-number" name="car-number" placeholder="Введите номер машины" required type="text">
 
-        <label for="date">Желаемая дата:</label>
-        <input type="date" id="date" name="date"><br><br>
+        <label for="car-model">Модель машины:</label>
+        <input id="car-model" name="car-model" placeholder="Введите модель машины" required type="text">
 
-        <label for="reason">Причина ремонта:</label><br>
-        <textarea id="reason" name="reason" rows="4" cols="50"></textarea><br><br>
+        <label for="car-year">Год выпуска:</label>
+        <input id="car-year" name="car-year" placeholder="Введите год выпуска машины" required type="text">
 
-        <input type="submit" value="Отправить">
+        <label for="repair-date">Желаемая дата ремонта:</label>
+        <input id="repair-date" name="repair-date" required type="date">
+
+        <label for="repair-reason">Причина ремонта:</label>
+        <textarea id="repair-reason" name="repair-reason" placeholder="Введите причину ремонта" required></textarea>
+
+        <input type="submit" value="Отправить заявку">
     </form>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="../static/script.js"></script>
 </body>
 </html>
+
+
+
